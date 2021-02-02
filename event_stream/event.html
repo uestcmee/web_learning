@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>hello</h1>
+<div id="result"></div>
+
+</body>
+
+
+<script type="text/javascript">
+    function fn(data){
+        alert(data.msg);
+    }
+</script>
+<!--<script type="text/javascript" src="http://crossdomain.com/jsonServerResponse?jsonp=fn">-->
+<script>
+    var source=new EventSource("http://33.futsse.eastmoney.com/sse/118_AUTD_qt");
+
+    source.onmessage=function(event)
+    {
+
+        var date=new Date().getTime()
+        var res=JSON.parse(event.data)
+
+        console.log(res.p)
+    };
+</script>
+</html>

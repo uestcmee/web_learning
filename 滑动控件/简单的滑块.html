@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .main{ position: relative;width: 500px;}
+        #range {
+            -webkit-appearance: none;
+            background: #999;
+            height: 3px;
+            outline: none;
+            margin: 0;
+            width: 500px;
+        }
+        input[type=range]::-webkit-slider-thumb{
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: red;
+        }
+        p{
+            position: absolute;
+            width: 0px;
+            height: 3px;
+            background: green;
+            top: -2px;
+            left: 0;
+        }
+        .range{
+            position: relative;
+        }
+        .value{
+            padding: 10px;
+            background: #ffebc7;
+            font-size: 40px;
+            text-align: center;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <div class="value"></div>
+    <div class="range">
+        <input type="range" max="10" min="0" id="range" step="0.1" value="0">
+        <p></p>
+    </div>
+</div>
+</body>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    $(".value").html("0")
+    var rangeSwitch=function () {
+        var x=$("#range").val();
+        $("p").css({"width":(x/10)*500*0.96})//乘的0.96是因为要不然绿色的颜色会有部分盖住滑动按钮（500-20）/500=0.96;
+        $(".value").html(x)
+    }
+    $("#range").on("input",rangeSwitch)
+</script>
+</html>

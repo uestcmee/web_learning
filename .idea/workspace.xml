@@ -1,7 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="51573e14-34a9-4b57-ae12-e37c4f78b8fd" name="Default Changelist" comment="" />
+    <list default="true" id="51573e14-34a9-4b57-ae12-e37c4f78b8fd" name="Default Changelist" comment="Init Commit">
+      <change afterPath="$PROJECT_DIR$/event_stream/east_fund_data_js.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event_stream/event.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event_stream/global_future.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event_stream/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event_stream/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event_stream/whats_this.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue初尝试.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/滑动控件/css/reset.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/滑动控件/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/滑动控件/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/滑动控件/js/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/滑动控件/js/jquery-ui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/滑动控件/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/滑动控件/双滑块.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/滑动控件/最小化滑块.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/滑动控件/简单的滑块.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/web_learning.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/web_learning.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/文件上传demo.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,11 +42,20 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Script" />
+        <option value="HTTP Request" />
+        <option value="JavaScript File" />
         <option value="HTML File" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1mPAHn7ieSgjKub4g2S7miQCgmk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -24,25 +65,64 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/滑动控件/static/css" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PycharmProjects\web_learning\滑动控件\static\css" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PycharmProjects\web_learning\滑动控件" />
+      <recent name="D:\PycharmProjects\web_learning\滑动控件\static\css" />
+      <recent name="D:\PycharmProjects\web_learning\滑动控件\static\js" />
       <recent name="D:\PycharmProjects\web_learning" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="my_1.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/web_learning/my_1.html" useBuiltInWebServerPort="true">
+  <component name="RestClientSettings">
+    <option name="REQUEST_HISTORY">
+      <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://www.baidu.com" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.vue初尝试.html">
+    <configuration name="All in whats_this" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/event_stream/whats_this.http">
       <method v="2" />
     </configuration>
+    <configuration name="文件上传demo.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/web_learning/文件上传demo.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="event.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/web_learning/event_stream/event.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="vue初尝试.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/web_learning/vue初尝试.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="HTTP Request.All in whats_this" />
+      <item itemvalue="JavaScript Debug.event.html" />
+      <item itemvalue="JavaScript Debug.文件上传demo.html" />
+      <item itemvalue="JavaScript Debug.vue初尝试.html" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.my_1.html" />
+        <item itemvalue="JavaScript Debug.vue初尝试.html" />
+        <item itemvalue="JavaScript Debug.文件上传demo.html" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="51573e14-34a9-4b57-ae12-e37c4f78b8fd" name="Default Changelist" comment="" />
@@ -51,11 +131,41 @@
       <option name="presentableId" value="Default" />
       <updated>1609384767113</updated>
       <workItem from="1609384768233" duration="1383000" />
-      <workItem from="1609812487763" duration="777000" />
+      <workItem from="1609812487763" duration="1734000" />
+      <workItem from="1610088913276" duration="9550000" />
+      <workItem from="1611021404751" duration="4793000" />
+      <workItem from="1611041216625" duration="790000" />
+      <workItem from="1612162663311" duration="1206000" />
+      <workItem from="1612252847082" duration="2251000" />
+      <workItem from="1612274466308" duration="3707000" />
     </task>
+    <task id="LOCAL-00001" summary="Init Commit">
+      <created>1609814951137</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1609814951137</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Init Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Init Commit" />
   </component>
 </project>
