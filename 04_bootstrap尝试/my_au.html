@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>黄金价差数据</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!--    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>-->
+    <link rel="stylesheet" href="../static/css/au_data.css">
+    <script src="../static/js/echarts.min.js"></script>
+    <link rel="icon" href="../static/img/favicon.ico" type="image/x-ico">
+    <!--    以下代码用来刷新页面布局信息-->
+
+    <script charset="utf-8" src="chrome-extension://pngicgippofneelinabebobnkpmdiphn/js/btype.js"></script><script type="text/javascript" charset="utf-8" src="chrome-extension://pngicgippofneelinabebobnkpmdiphn/js/chrome.js"></script></head><remove-web-limits-iqxin id="rwl-iqxin" class="rwl-exempt" style="position: fixed; top: 146px; left: 0px;"><qxinbutton type="qxinbutton" id="rwl-setbtn"> set </qxinbutton> <lalala style="cursor:move; font-size:12px;">限制解除</lalala> <input type="checkbox" name="" id="black_node"><style type="text/css">#rwl-iqxin{position:fixed;transform:translate(-95px,0);width:85px;height:25px;font-size:12px;font-weight: 500;font-family:Verdana, Arial, '宋体';color:#fff;background:#333;z-index:2147483647;margin: 0;opacity:0.05;transition:0.3s;overflow:hidden;user-select:none;text-align:center;white-space:nowrap;line-height:25px;padding:0 16px;border:1px solid #ccc;border-width:1px 1px 1px 0;border-bottom-right-radius:5px;box-sizing: content-box;}#rwl-iqxin input{margin: 0;padding: 0;vertical-align:middle;-webkit-appearance:checkbox;-moz-appearance:checkbox;position: static;clip: auto;opacity: 1;cursor: pointer;}#rwl-iqxin.rwl-active-iqxin{left: 0px;transform:translate(0,0);opacity: 0.9;height: 32px;line-height: 32px}#rwl-iqxin label{margin:0;padding:0;font-weight:500;}#rwl-iqxin #rwl-setbtn{margin: 0 4px 0 0;padding: 0 0 0 4px;border: none;border-radius: 2px;cursor: pointer;background: #fff;color: #000;} </style></remove-web-limits-iqxin>
+<body>
+<a href="/">返回主页</a>
+
+
+<h1>黄金价差数据</h1>
+
+<div id="main_body">
+
+    <div id="high_freq">
+        <h3><span>2021-03-19</span><span>:当前持仓量最大期货:</span><span id="most_active">AU2106</span></h3>
+        <p>下表仅在交易时段更新</p>
+        <table border="1">
+            <tbody><tr>
+                <td class="biaoge_title">代码</td>
+                <td>AU(T+D).SGE</td>
+                <td id="dominant">
+                    <select name="qhhy" id="qhhy" onchange="change_contract(this.value)"><option value="AU2106" end_day="20210616">AU2106</option><option value="AU2108" end_day="20210817">AU2108</option><option value="AU2110" end_day="20211018">AU2110</option><option value="AU2112" end_day="20211216">AU2112</option><option value="AU2104" end_day="20210416">AU2104</option><option value="AU2105" end_day="20210518">AU2105</option><option value="AU2202" end_day="20220216">AU2202</option></select>
+
+                </td>
+                <!--            <td><button id="change_contract" onclick="history.go(0)">切换合约</button></td>-->
+
+            </tr>
+            <!--        <tr>-->
+            <!--            <td class="biaoge_title">简称</td>-->
+            <!--            <td>SGE黄金T+D</td>-->
+            <!--            <td>沪金2106</td>-->
+            <!--        </tr>-->
+            <tr>
+                <td class="biaoge_title">最后交割日</td>
+                <td>-</td>
+                <td id="delivery">2021-06-16</td>
+            </tr>
+            <tr>
+                <td class="biaoge_title">最新成交价</td>
+                <td id="xh_now" class="">364.5</td>
+                <td id="qh_now">init</td>
+            </tr>
+            <tr>
+                <td class="biaoge_title">买价</td>
+                <td id="xh_buy">364.51</td>
+                <td id="qh_buy">init</td>
+            </tr>
+            <tr>
+                <td class="biaoge_title">卖价</td>
+                <td id="xh_sale">364.62</td>
+                <td id="qh_sale">init</td>
+            </tr>
+            <tr>
+                <td class="biaoge_title">成交价（价差/收益率）</td>
+                <td id="jiacha_pure">NaN</td>
+                <td id="ytm_pure">NaN</td>
+            </tr>
+            <tr>
+                <td class="biaoge_title">正套（价差/收益率）</td>
+                <td id="jiacha_zheng">NaN</td>
+                <td id="ytm_zheng">NaN</td>
+            </tr>
+            <tr>
+                <td class="biaoge_title">反套（价差/收益率）</td>
+                <td id="jiacha_fan">NaN</td>
+                <td id="ytm_fan">NaN</td>
+            </tr>
+            <tr>
+                <td class="biaoge_title">更新时间</td>
+                <td id="stock_time_xh">13:09:44</td>
+                <td id="stock_time_qh">init</td>
+            </tr>
+            </tbody></table>
+
+
+    </div>
+
+    <div id="high_freq_pic" class="js_pic" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1616130580042"><div style="position: relative; width: 400px; height: 396px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="800" height="792" style="position: absolute; left: 0px; top: 0px; width: 400px; height: 396px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div></div>
+
+    <div id="au_day" class="js_pic" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1616130580040"><div style="position: relative; width: 800px; height: 396px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="1600" height="792" style="position: absolute; left: 0px; top: 0px; width: 800px; height: 396px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class="" style="position: absolute; display: block; border-style: solid; white-space: nowrap; z-index: 9999999; box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 10px; transition: opacity 0.2s cubic-bezier(0.23, 1, 0.32, 1) 0s, visibility 0.2s cubic-bezier(0.23, 1, 0.32, 1) 0s, left 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s, top 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s; background-color: rgb(255, 255, 255); border-width: 1px; border-radius: 4px; color: rgb(102, 102, 102); font: 14px / 21px &quot;Microsoft YaHei&quot;; padding: 10px; left: 583px; top: 89px; border-color: rgb(255, 255, 255); pointer-events: none; visibility: hidden; opacity: 0;"><div style="margin: 0px 0 0;line-height:1;"><div style="margin: 0px 0 0;line-height:1;"><div style="font-size:12px;color:#6e7079;line-height:1;">02:19</div><div style="margin: 10px 0 0;line-height:1;"><div style="margin: 0px 0 0;line-height:1;"><div style="margin: 0px 0 0;line-height:1;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:#fac858;"></span><span style="font-size:12px;color:#6e7079;margin-left:2px">价差</span><span style="float:right;margin-left:20px;font-size:14px;color:#464646;font-weight:900">1.7</span><div style="clear:both"></div></div><div style="clear:both"></div></div><div style="margin: 10px 0 0;line-height:1;"><div style="margin: 0px 0 0;line-height:1;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:#ee6666;"></span><span style="font-size:12px;color:#6e7079;margin-left:2px">收益率</span><span style="float:right;margin-left:20px;font-size:14px;color:#464646;font-weight:900">1.91</span><div style="clear:both"></div></div><div style="clear:both"></div></div><div style="clear:both"></div></div><div style="clear:both"></div></div><div style="margin: 20px 0 0;line-height:1;"><div style="font-size:12px;color:#6e7079;line-height:1;">02:19</div><div style="margin: 10px 0 0;line-height:1;"><div style="margin: 0px 0 0;line-height:1;"><div style="margin: 0px 0 0;line-height:1;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:#5470c6;"></span><span style="font-size:12px;color:#6e7079;margin-left:2px">期货价格</span><span style="float:right;margin-left:20px;font-size:14px;color:#464646;font-weight:900">366</span><div style="clear:both"></div></div><div style="clear:both"></div></div><div style="margin: 10px 0 0;line-height:1;"><div style="margin: 0px 0 0;line-height:1;"><span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:#91cc75;"></span><span style="font-size:12px;color:#6e7079;margin-left:2px">现货价格</span><span style="float:right;margin-left:20px;font-size:14px;color:#464646;font-weight:900">364.3</span><div style="clear:both"></div></div><div style="clear:both"></div></div><div style="clear:both"></div></div><div style="clear:both"></div></div><div style="clear:both"></div></div></div></div>
+
+
+    <div id="au_hist_data">
+        <h2>历史数据列表：</h2>
+        <table border="1" class="dataframe deal" id="hist_table">
+            <thead>
+            <tr>
+                <th>日期</th>
+                <th>期货</th>
+                <th>现货</th>
+                <th>价差</th>
+                <th>收益率</th>
+                <th>合约</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>2021-03-18</td>
+                <td>369.24</td>
+                <td>367.55</td>
+                <td>1.69</td>
+                <td>1.86475</td>
+                <td>AU2106</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="au_hist" class="js_hist_pic js_pic" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1616130580041"><div style="position: relative; width: 400px; height: 396px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="800" height="792" style="position: absolute; left: 0px; top: 0px; width: 400px; height: 396px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div></div>
+</div>
+
+
+<script src="../static/js/ec_au.js"></script>
+<script src="../static/js/au_data.js"></script>
+
+
+
+</body></html>

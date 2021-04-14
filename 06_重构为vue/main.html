@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+                                     initial-scale=1.0">
+    <title>主页</title>
+    <!--    到处都放了ico，但是下面这两句似乎用不了-->
+    <!--    <link rel="shortcut icon" href="favicon.ico" type="image/x-ico"/>-->
+    <!--    <link rel="icon" href="/favicon.ico" type="image/x-ico"/>-->
+    <!--    <link rel="icon" href="/favicon.ico"/>-->
+    <link href="../static/css/public.css" rel="stylesheet">
+    <script src="../static/js/access_log.js"></script>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--    axios-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="icon" href="../static/img/favicon.ico" type="image/x-ico"/>
+
+
+</head>
+<body>
+<div class="container" id="app">
+    <h1 class="text-center">{{title}}</h1>
+    <p id="now_time" class="text-center"></p>
+
+    <ul class="text-center center big list-unstyled" >
+        <li v-for="(item,url) in url_dic" style="margin: 0 auto;">
+
+            <a :href="url">{{item}}</a>
+        </li>
+    </ul>
+<!--    <ul>-->
+<!--        <li v-for="(val, key,  index) in persons"> {{ person.index }} - {{ person.key }}: {{ person.val }} </li>-->
+<!--    </ul>-->
+
+</div>
+<div id="footer"></div>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            show_title: true,
+            title: '小工具合集',
+            url_list:['bond_deal','au_data','upload','irs','chain_price'],
+            name_list: ['同业交易中心债券成交', '黄金期现价差', '信用债中介成交','IRS利差','产业链商品价格'],
+            url_dic:{
+                '/bond_deal':'同业交易中心债券成交',
+                '/au_data':'黄金期现价差',
+                '/upload':'信用债中介成交',
+                '/irs':'IRS利差',
+                '/chain_price':'产业链商品价格',
+            },
+            persons: {
+                name: "岚枫秋秋",
+                age: '29'
+            }
+        },
+        mounted() {
+            //五秒更新一次笑话
+            // this.ajaxJoke()
+            // setInterval(this.ajaxJoke,5000)
+        },
+
+        methods: {
+            //切换标题是否显示
+            changeShow: function () {
+                this.show_title = !this.show_title;
+            },
+            //添加到列表中
+            add: function () {
+                //已经绑定了，直接读取inputStr
+                this.list.push(this.inputStr)
+            },
+            // 获取随机笑话
+            /*
+            请求地址：https://autumnfish.cn/api/joke
+            请求方法：get
+            请求参数：无
+            响应内容：随机笑话*/
+            fetchJoke: function () {
+                let that = this
+                axios.get('https://autumnfish.cn/api/joke')
+                    .then(function (response) {
+                            // console.log(response)
+                            that.joke = response.data
+                        },
+                        function (err) {
+                            console.log(err)
+                        }
+                    )
+            },
+            ajaxJoke: function () {
+                // ajax与vue不冲突，放在这里应该是没问题的
+                // vue主要是html内部的渲染？
+                let that = this
+                $.ajax({
+                    url: 'https://autumnfish.cn/api/joke',
+                    success: function (data) {
+                        console.log(data)
+                        that.joke2 = data
+                    },
+                    error: function (err) {
+                        console.log(err)
+                    }
+                })
+            },
+
+        },
+    })
+</script>
+
+
+<script>
+    $(function () {
+        $("#footer").load("footer.html");
+    });
+</script>
+
+<script>
+    function fresh_time() {
+        var now_date = new Date().toLocaleString()
+        document.getElementById('now_time').innerText = (now_date)
+    }
+
+    fresh_time()
+    var loop = setInterval(fresh_time, 1000)
+    // window.addEventListener('blur', () => {
+    //     document.title = document.title.split('（')[0] + '（不活跃）';
+    //     clearInterval(loop)
+    //     // var loop=setInterval(high_freq_data,30000)
+    //
+    // }, true);
+    //
+    // window.addEventListener('focus', () => {
+    //     document.title = document.title.split('（')[0] + '（活跃）';
+    //     clearInterval(loop)
+    //     loop = setInterval(fresh_time, 1000)
+    //
+    // }, true);
+
+</script>
+</body>
+</html>
